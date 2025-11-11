@@ -24,4 +24,22 @@ A text file which has instructions on how to build a Docker image. It's a bluepr
 4. CMD or ENTRYPOINT: Defines the command that runs when the container starts.
 5. EXPOSE: Specifies the port the container will listen on.
 
+#### Steps to implement the Dockerfile
+1. Install Docker Desktop
+2. Sign into Dockerhub and Docker Desktop
+3. Docker Desktop:
+- Check docker install: cli -> "docker"
+- Pull the hello world image and run it
 
+Assure that you're logged in: docker login
+Build docker image: docker build -t docker_demo .
+Run the container: docker run -p 5000:5000 docker_demo
+(Map the docker image's 5000 port to system's 5000 port)
+Tag your image: docker tag docker_demo:latest wildchaser1703/docker_demo:v1
+Push image to dockerhub: docker push wildchaser1703/docker_demo:v1
+Pull image to dockerhub: docker pull wildchaser1703/docker_demo:v1
+Run the pulled image: docker run -p 5000:5000 wildchaser1703/docker_demo:v1
+
+#### Difference between Docker Image and Docker Container
+- Image: A static snapshot (immutable); Describes the filesystem and startup instructions (CMD, ENTRYPOINT) (Hint: Think of a foldable tent with materials)
+- Container: A runtime instance of that image; Runs as a lightweight process isolated from your system (Hint: Think of building the whole tent using those materials)
