@@ -14,3 +14,14 @@ Docker makes scaling apps easier. For example, if a web service is getting high 
 Docker is lighter, faster, and more portable as compared to VMs, which are heavier and slower due to full OS virtualization.
 
 Docker shares the host OS and use fewer resources, making it lightweight. VM runs on a full OS for each instance, making it heavy and slower to start (minutes). It consumes more resources beacuse it needs to virtualize hardware, not just the app.
+
+### Dockerfile
+A text file which has instructions on how to build a Docker image. It's a blueprint for the image, specifying the environment, app and dependencies.
+#### Key Components:
+1. FROM: Specifies the base image.
+2. COPY or ADD: Adds file from your host system into the image.
+3. RUN: Executes commands in the image, such as installing the software.
+4. CMD or ENTRYPOINT: Defines the command that runs when the container starts.
+5. EXPOSE: Specifies the port the container will listen on.
+
+
